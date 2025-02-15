@@ -1,0 +1,182 @@
+/* Global Box Sizing Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Universal Styles */
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f0f0f0;
+}
+
+/* Background Overlay (Only for Background) */
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./images/index.jpeg) no-repeat center center/cover;
+    z-index: -2;
+}
+
+.background-overlay-2{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./images/halloween.jpg) no-repeat center center/cover;
+    z-index: -2;
+}
+.background-overlay-3{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./images/polaroid.jpeg) no-repeat center center/cover;
+    z-index: -2;
+}
+.background-overlay-4{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(./images/kitchen.JPG) no-repeat center center/cover;
+    z-index: -2;
+}
+
+/* Add a semi-transparent layer on top of the background */
+.background-overlay::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Opacity effect only for background */
+}
+
+/* Quote Bar at the Top */
+.quote-bar {
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Main Content Section */
+.content {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    width: 90%;
+    max-width: 1000px;
+    z-index: 3;
+}
+
+/* Image Container (Centered Image) */
+.image-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.image {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+.image-3 {
+    width: 60%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Image Hover Effect */
+.image:hover {
+    transform: scale(1.05);
+}
+
+/* Description Box Container */
+.description {
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Static Description Text */
+.description-text {
+    font-size: 1.2rem;
+    font-family: 'Open Sans', sans-serif;
+    color: #333;
+    margin: 0;
+}
+
+/* Next Page Button */
+/* Update the footer button container to use flexbox */
+.footer-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    gap: 20px;  /* Space between buttons */
+}
+
+/* Common styles for both buttons */
+.footer-btn a {
+    padding: 12px 30px;
+    background-color: #E84A27;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(255, 107, 129, 0.7);
+}
+
+.footer-btn a:hover {
+    background-color: #ff4757;
+    box-shadow: 0px 0px 15px rgba(255, 71, 87, 0.9);
+}
+
+/* (Optional) If you want to target the prev-btn specifically, you can add extra styles here
+.prev-btn {
+    /* For example, a different background color (or you can leave it identical to next-btn) */
+    /* background-color: #C74375; */
+
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .quote-bar {
+        font-size: 1.2rem;
+    }
+    .image {
+        width: 90%;
+    }
+    .description-text {
+        font-size: 1rem;
+    }
+}

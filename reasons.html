@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 Reasons I Love You</title>
+    <link rel="stylesheet" href="reasons.css">
+</head>
+<body>
+
+    <div class="background"></div>
+
+    <div class="container">
+        <h1 class="title">52 Reasons Why I Love You, Cuz 50 Isn't Enough</h1>
+        <p class="subtitle">This is me tryna be all cute and romantic</p>
+
+        <div class="grid">
+            <!-- Generate 50 cards -->
+            <script>
+        let reasons = [
+            "You somehow can make me laught even when I am in the worst of moods.",
+            "Your hugs are a home away from home.",
+            "You get so fucking excited over the smallest things, and it's the cutest thing ever.",
+            "You never laugh at my crazy ideas or far fetched goals, you just ask how we gonna make em happen.",
+            "You can chop it up with anyone, and I love that about you.",
+            "You can dish out some impressive heat and you can (usually) take some as well.",
+            "Your smile is a personal cheat code to make my day better.",
+            "You dance and sing like no one's watching… but I'm always watching...",
+            "We have the kind of inside jokes that would make zero sense to anyone else.",
+            "You believe in me even when I second guess myself.",
+            "The way you hold my hand makes me feel like the most loved person in the world.",
+            "You text me just to say you love me, and it never gets old. EVER.",
+            "You've seen all my flaws and still somehow think I'm worth your time.",
+            "You are a FREAK. Periodt.",
+            "We can talk for hours about nothing & everything but somehow make it the best conversation ever.",
+            "You sing all the wrong lyrics with full confidence, and I'll usually (only sometimes) correct you.",
+            "You somehow always know what to say when we are stressed even when I don't.",
+            "You make ordinary moments feel like the best moments.",
+            "You take care of me when I'm sick, even though I'm the worst patient ever.",
+            "I've caught you looking at me like I'm your favorite person, and Damn that shit cute af.",
+            "You're always down for random lil adventures.",
+            "You put up with my stubbornness, even when I know I'm being annoying af.",
+            "The way you always go out of your way for others, even when no one notices.",
+            "You appreciate the little things, like my simple little meals.",
+            "You go after what you want with this sexy determination, and it's insanely attractive.",
+            "I swear, every road trip, late-night talk, or random walk with you is a core memory.",
+            "Your texts are my favorite notification sound.",
+            "The way you reach for me when you're half-asleep. Mmmm",
+            "You push me to be better without ever making me feel like I'm not enough.",
+            "You actually care about my weird hobbies, and that means more than you know.",
+            "Hearing your voice at the end of a long day makes everything feel right again.",
+            "You still make my heart race like it's our first date.",
+            "You are, without a doubt, my calm in the chaos.",
+            "You inspire me to be better so that we can live better.",
+            "Every single memory with you is something I wouldn't trade for the world.",
+            "You are, hands down, my favorite plot twist in life.",
+            "You make our rainy days feel like a cozy love story.",
+            "Your touch is so homey. I can't explain it.",
+            "You challenge me in ways that make us stronger.",
+            "No one has ever made me feel more understood than you do.",
+            "Waking up next to you? Easily my favorite way to start the day.",
+            "You remember the little things about me, even the things I forget about myself.",
+            "Your random 'I love yous' hit different every single time.",
+            "You surprise me, not just with things, but with the way you love me.",
+            "The way your nose scrunches when you laugh is HOT.",
+            "There's no one else I'd rather get lost in a new city with.",
+            "You make even the most stressful days feel like they weren't so bad.",
+            "Loving you is the easiest thing I've ever done.",
+            "You somehow know what I'm thinking before I even say it.",
+            "No matter how many times I see you, there’s always this split second where my brain just goes, 'Wow, I'm really with her.'",
+            "You turn the most random moments like grocery shopping or sitting in traffic into something I'll remember forever.",
+            "Because, honestly, if I listed every reason, we'd be here forever..."
+        ];
+
+
+                for (let i = 0; i < reasons.length; i++) {
+                    document.write(`
+                        <div class="card">
+                            <div class="card-inner">
+                                <div class="card-front">${i + 1}</div>
+                                <div class="card-back">${reasons[i]}</div>
+                            </div>
+                        </div>
+                    `);
+                }
+            </script>
+        </div>
+        <div class="footer-btn">
+            <a href="fav_pics.html" class="prev-btn">Previous Page</a>
+            <a href="bucketlist.html" class="next-btn">Next Page</a>
+        </div>
+    </div>
+
+</body>
+</html>

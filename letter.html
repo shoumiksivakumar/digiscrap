@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dear Lover</title>
+    <link rel="stylesheet" href="letter.css">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Sacramento&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-animation"></div>
+
+    <div class="container">
+        <h1 class="title">Dear Sachi</h1>
+        <div class="envelope" onclick="toggleLetter()">
+            <div class="envelope-flap"></div>
+            <div class="letter">
+                <div class="message-container">
+                    <p class="message">
+                        My Love,  
+                        <br><br>
+                        As I’m writing this, I’m just thinking back to the day we took that wild leap of faith together. Life was a little rough back then, huh? Talk about diving headfirst into the unknown. But honestly, looking back, stepping out of our comfort zones together was one of the best (and slightly chaotic) decisions we’ve ever made. I still can’t quite put into words what love really is, but I do know that you are my happiness. You’re the reason even the most boring tasks feel like an adventure. From those cozy nights in bed where we swear we won’t stay up too late (but do anyway) to you somehow convincing me to get up and do spontaneous things when I’d rather be lazy, even though I suck at showing it I promise I love it all. You make life lighter, brighter, and just… better. You’ve taught me that love isn’t about perfection, it’s about showing up, being real, and embracing the beautiful mess of it all. Your laugh, your silly little jokes, and the way you manage to make everything feel like home. I wouldn’t trade it for anything. So here’s to us, to all the memories we’ve made, and to the ones we haven’t even dreamed up yet. You’re officially stuck with me forever… no refunds.
+                        <br><br>
+                        I love you endlessly.  
+                        <br><br>
+                        Till Forever,  
+                        <br>
+                        <span class="signature">Shoumik</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Buttons below the envelope -->
+        <div class="footer-btn">
+            <a href="bucketlist.html" class="prev-btn">Previous Page</a>
+            <a href="index.html" class="next-btn">Back Home</a>
+        </div>
+    </div>
+
+    <script>
+        let isOpen = false;
+
+        function toggleLetter() {
+            const letter = document.querySelector(".letter");
+            const flap = document.querySelector(".envelope-flap");
+
+            if (isOpen) {
+                letter.classList.remove("open");
+                flap.classList.remove("open");
+            } else {
+                letter.classList.add("open");
+                flap.classList.add("open");
+            }
+            isOpen = !isOpen;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+/* Background Image with Soft Overlay */
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    font-family: 'Playfair Display', serif;
+}
+body.backimage {
+    background: url('images/index.jpeg') no-repeat center center/cover;
+}
+/* Soft Overlay Effect */
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Darkens background for readability */
+    z-index: 1;
+}
+
+/* Centered Content */
+.container {
+    text-align: center;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    max-width: 80%;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Romantic Title */
+h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+/* Soft Subtext */
+p {
+    font-size: 1.2rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Glowing Enter Button */
+.enter-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    background: #E84A27; /* Soft Romantic Pink */
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 0px 10px rgba(255, 107, 129, 0.7);
+}
+
+/* Button Hover Effect */
+.enter-btn:hover {
+    background: #ff4757;
+    box-shadow: 0px 0px 15px rgba(255, 71, 87, 0.9);
+}

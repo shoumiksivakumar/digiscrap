@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Bucket List</title>
+    <link rel="stylesheet" href="bucketlist.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Our Bucket List</h1>
+        <p class="subtitle">Dreams we'll chase together &#40some of these we've done but need to do again&#41</p>
+
+        <div class="bucket-list-container">
+            <ul id="bucket-list"></ul>
+        </div>
+
+        <div class="add-item">
+            <input type="text" id="new-item" placeholder="Let me get your input too shawty...">
+            <button onclick="addToList()">Add</button>
+        </div>
+    </div>
+
+    <script>
+        const defaultItems = [
+            "Watch the Northern Lights together.",
+            "Take a spontaneous road trip with no set destination.",
+            "Spend a night under the stars in the middle of nowhere.",
+            "Go to a cooking class together and see who does better.",
+            "Take a last-minute trip somewhere without overplanning but just figuring it out as we go.",
+            "Leave notes for each other in unexpected places.",
+            "Rent a cabin in the middle of nowhere, no distractions, just us.",
+            "Go on a midnight drive with no destination, just good music and real conversations.",
+            "Find a random restaurant and really make that our spot.",
+            "Recreate our first date and see how much we've changed since then (the ferris wheel and fireworks iykyk).",
+            "Take a polaroid picture every month and put together a scrapbook over time.",
+            "Go camping, no phones, just us and whatever we manage to cook over a fire.",
+            "Write letters to each other and open them years later.",
+            "Spend an entire day in bed and order food, watch movies, and do absolutely nothing productive.",
+            "Try something completely new together like skydiving, pottery, archery—whatever sounds interesting.",
+            "Make a playlist that is all our fav songs.",
+            "Get dressed up for no reason and go somewhere fancy just because.",
+            "Show up at a random wedding and get free food.",
+            "Find a nice lil spot to watch the sunrise together.",
+            "Build a fatass fort.",
+        ];
+
+
+        function addToList() {
+            let input = document.getElementById("new-item");
+            let newItem = input.value.trim();
+
+            if (newItem !== "") {
+                let list = document.getElementById("bucket-list");
+                createListItem(newItem, list);
+                
+                saveList();
+                input.value = "";
+            }
+        }
+
+        function createListItem(text, list) {
+            let li = document.createElement("li");
+
+            let span = document.createElement("span");
+            span.textContent = text;
+
+            let deleteBtn = document.createElement("button");
+            deleteBtn.textContent = "✖";
+            deleteBtn.classList.add("delete-btn");
+            deleteBtn.onclick = function() {
+                deleteItem(li);
+            };
+
+            li.appendChild(span);
+            li.appendChild(deleteBtn);
+            list.appendChild(li);
+        }
+
+        function saveList() {
+            let list = document.getElementById("bucket-list");
+            let items = [];
+            for (let i = 0; i < list.children.length; i++) {
+                items.push(list.children[i].querySelector("span").textContent.trim());
+            }
+            localStorage.setItem("bucketList", JSON.stringify(items));
+        }
+
+        function deleteItem(item) {
+            let list = document.getElementById("bucket-list");
+            list.removeChild(item);
+            saveList();
+        }
+
+        function loadList() {
+            let savedList = localStorage.getItem("bucketList");
+            let list = document.getElementById("bucket-list");
+
+            if (savedList) {
+                let items = JSON.parse(savedList);
+                items.forEach(item => createListItem(item, list));
+            } else {
+                localStorage.setItem("bucketList", JSON.stringify(defaultItems));
+                defaultItems.forEach(item => createListItem(item, list));
+            }
+        }
+
+        window.onload = loadList;
+    </script>
+
+    <div class="footer-btn">
+        <a href="reasons.html" class="prev-btn">Previous Page</a>
+        <a href="letter.html" class="next-btn">Next Page</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+/* Ensure full page styling applies */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #971717, #c03232);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Background Image Fix */
+.background {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url('https://source.unsplash.com/1600x900/?love,romance') no-repeat center center/cover;
+    filter: blur(4px);
+    opacity: 0.4;
+    z-index: -1;
+}
+
+/* Title & Subtitle */
+.title {
+    font-size: 2.5rem;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 10px rgba(255, 255, 255, 0.8);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 30px;
+}
+
+/* Grid Layout */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 30px; /* Increased gap between cards */
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Card Styling */
+.card {
+    width: 180px;
+    height: 180px;
+    perspective: 1200px; /* Increased to prevent overlap */
+    cursor: pointer;
+    margin: 15px; /* Added spacing around each card */
+}
+
+.card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Flip Effect */
+.card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Front & Back */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    backface-visibility: hidden;
+}
+
+/* Front */
+.card-front {
+    background: linear-gradient(45deg, #000000, #630000);
+    color: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Back */
+.card-back {
+    background: white;
+    color: #000000;
+    transform: rotateY(180deg);
+    padding: 15px;
+}
+
+/* Next Button */
+.footer-btn {
+    position: relative;  /* Remove fixed positioning */
+    bottom: auto;        /* Reset bottom */
+    left: auto;          /* Reset left */
+    transform: none;     /* Remove transform */
+    display: flex;
+    justify-content: center;
+    gap: 20px;  /* Space between buttons */
+    margin-top: 50px; /* Adds space between gallery and buttons */
+}
+
+/* Common styles for both buttons */
+.footer-btn a {
+    padding: 12px 30px;
+    background-color: #E84A27;
+    color: white;
+    font-size: 1.2rem;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0px 0px 10px rgba(255, 107, 129, 0.7);
+}
+
+.footer-btn a:hover {
+    background-color: #ff4757;
+    box-shadow: 0px 0px 15px rgba(255, 71, 87, 0.9);
+}
+
